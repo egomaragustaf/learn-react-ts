@@ -1,0 +1,21 @@
+[
+    {
+      "id": 1,
+      "name": "School Sneaker 50",
+      "color": "Red",
+      "price": 200000
+    },
+    {
+      "id": 2,
+      "name": "School Sneaker 100",
+      "color": "Blue",
+      "price": 210000
+    },
+    {
+      "id": 3,
+      "name": "School Sneaker 150",
+      "color": "Green",
+      "price": 250000
+    }
+  ]
+  
