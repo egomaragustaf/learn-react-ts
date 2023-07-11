@@ -1,6 +1,7 @@
-interface ButtonProps {
+import React from "react";
+
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  onClick: () => void;
 }
 
 export default function Button(props: ButtonProps) {

@@ -1,27 +1,68 @@
 import { useState } from "react";
-
-import Button from "./Button";
 import FormProduct from "./FormProduct";
-import productsJSON from "../data/products.json";
+import Button from "./Button";
+
+interface Product {
+  id: number;
+  name: string;
+  color: string;
+  price: number;
+}
 
 export default function Products() {
-  const [dataProducts, setDataProducts] = useState(productsJSON);
+  const [dataProducts, setDataProducts] = useState<Product[]>([]);
+  const [formData, setFormData] = useState<Product>({
+    id: 0,
+    name: "",
+    color: "",
+    price: 0,
+  });
 
-  function addNewProduct() {
-    setDataProducts([
-      ...dataProducts,
-      { id: 4, name: "School Sneaker 200", color: "Yellow", price: 400000 },
-    ]);
+  function handleInputChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  }
+
+  function addNewProduct(event: React.FormEvent) {
+    event.preventDefault();
+
+    const newProduct: Product = {
+      id: dataProducts.length + 1,
+      name: formData.name,
+      color: formData.color,
+      price: formData.price,
+    };
+
+    setDataProducts([...dataProducts, newProduct]);
+
+    setFormData({
+      id: 0,
+      name: "",
+      color: "",
+      price: 0,
+    });
+
+    console.log(newProduct);
   }
 
   return (
-    <ul>
-      <FormProduct />
+    <div>
+      <FormProduct
+        formData={formData}
+        onInputChange={handleInputChange}
+        onSubmit={addNewProduct}
+      />
       <Button onClick={addNewProduct}>Add New Product</Button>
 
-      {dataProducts.map((product) => {
-        return <li key={product.id}>{product.name}</li>;
-      })}
-    </ul>
+      {dataProducts.map((product) => (
+        <ul key={product.id}>
+          <li>{product.name}</li>
+          <li>{product.color}</li>
+          <li>{product.price}</li>
+        </ul>
+      ))}
+    </div>
   );
 }
