@@ -16,8 +16,8 @@ export default function FormProduct({
 }: FormProductProps) {
   return (
     <form onSubmit={onSubmit}>
-      <div>
-        <div>
+      <div className="flex flex-col gap-2 w-full max-w-xs bg-slate-700 rounded p-4">
+        <div className="flex w-full justify-between items-center">
           <label htmlFor="productName">Shoe Name</label>
           <input
             type="text"
@@ -28,7 +28,7 @@ export default function FormProduct({
             onChange={onInputChange}
           />
         </div>
-        <div>
+        <div className="flex w-full justify-between items-center">
           <label htmlFor="productColor">Shoe Color</label>
           <input
             type="text"
@@ -39,7 +39,7 @@ export default function FormProduct({
             onChange={onInputChange}
           />
         </div>
-        <div>
+        <div className="flex w-full justify-between items-center">
           <label htmlFor="productPrice">Shoe Price</label>
           <input
             type="text"
