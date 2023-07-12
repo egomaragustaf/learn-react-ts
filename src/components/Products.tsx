@@ -1,6 +1,8 @@
 import { useState } from "react";
+
 import FormProduct from "./FormProduct";
 import Button from "./Button";
+import productJSON from "../data/products.json";
 
 interface Product {
   id: number;
@@ -10,7 +12,7 @@ interface Product {
 }
 
 export default function Products() {
-  const [dataProducts, setDataProducts] = useState<Product[]>([]);
+  const [dataProducts, setDataProducts] = useState<Product[]>(productJSON);
   const [formData, setFormData] = useState<Product>({
     id: 0,
     name: "",
@@ -44,7 +46,7 @@ export default function Products() {
       price: 0,
     });
 
-    console.log(newProduct);
+    console.log([...dataProducts, newProduct]);
   }
 
   return (
