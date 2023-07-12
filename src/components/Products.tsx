@@ -57,6 +57,9 @@ export default function Products() {
         onSubmit={addNewProduct}
       />
       <Button onClick={addNewProduct}>Add New Product</Button>
+      <Button>
+        <a href="/">Back To Home</a>
+      </Button>
 
       {dataProducts.map((product) => (
         <ul key={product.id}>
