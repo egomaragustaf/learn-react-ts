@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 type Product = {
-  name: string;
-  image: string;
+  brand: string;
+  thumbnail: string;
   title: string;
   description: string;
   price: string;
   id: number;
+  category: string;
 };
 
 const ShowProducts: React.FC = () => {
@@ -39,12 +40,12 @@ const ShowProducts: React.FC = () => {
       <div className="flex flex-col gap-4 max-w-sm">
         {products.map((product) => (
           <ul key={product.id}>
-            <li>{product.name}</li>
-            <li>{product.image}</li>
-            <li>{product.title}</li>
-            <li>{product.description}</li>
-            <li>{product.price}</li>
-            <li>{product.id}</li>
+            <li>{product.thumbnail}</li>
+            <li>Title: {product.title}</li>
+            <li>Description: {product.description}</li>
+            <li>Brand: {product.brand}</li>
+            <li>Category: {product.category}</li>
+            <li>Price: ${product.price}</li>
           </ul>
         ))}
       </div>
