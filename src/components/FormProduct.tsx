@@ -21,7 +21,8 @@ export default function FormProduct({
           <label htmlFor="productName">Shoe Name</label>
           <input
             type="text"
-            name="name"
+            id="productName"
+            name="productName"
             placeholder="Shoe Name"
             className="text-black px-2 py-1"
             value={formData.name}
@@ -32,7 +33,8 @@ export default function FormProduct({
           <label htmlFor="productColor">Shoe Color</label>
           <input
             type="text"
-            name="color"
+            id="productColor"
+            name="productColor"
             placeholder="Shoe Color"
             className="text-black px-2 py-1"
             value={formData.color}
@@ -43,7 +45,8 @@ export default function FormProduct({
           <label htmlFor="productPrice">Shoe Price</label>
           <input
             type="text"
-            name="price"
+            id="productPrice"
+            name="productPrice"
             placeholder="Shoe Price"
             className="text-black px-2 py-1"
             value={formData.price}
