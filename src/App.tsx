@@ -4,16 +4,19 @@ import Button from "./components/Button";
 export default function App() {
   return (
     <main>
-      <h1 className="dark:text-slate-200 text-black text-lg">
-        Hello! I am Ego Maragustaf
-      </h1>
+      <h1>Hello! I am Ego Maragustaf</h1>
       <p>This is Epic Shoes</p>
-      <Button>
-        <Link to="/products">Products</Link>
-      </Button>
-      <Button>
-        <Link to="/about">About</Link>
-      </Button>
+      <div className="flex gap-6">
+        <Button>
+          <Link to="/products">Add Products</Link>
+        </Button>
+        <Button>
+          <Link to="/about">About</Link>
+        </Button>
+        <Button>
+          <Link to="/showproducts">All Products</Link>
+        </Button>
+      </div>
     </main>
   );
 }
