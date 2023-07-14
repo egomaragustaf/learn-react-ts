@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./Button";
 
 export default function About() {
@@ -6,7 +7,7 @@ export default function About() {
       <h1>History</h1>
       <p>This is history of this e-commerce</p>
       <Button>
-        <a href="/">Back To Home</a>
+        <Link to="/">Back To Home</Link>
       </Button>
     </div>
   );

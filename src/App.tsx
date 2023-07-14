@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "./components/Button";
 
 export default function App() {
@@ -8,10 +9,10 @@ export default function App() {
       </h1>
       <p>This is Epic Shoes</p>
       <Button>
-        <a href="/products">Products</a>
+        <Link to="/products">Products</Link>
       </Button>
       <Button>
-        <a href="/about">About</a>
+        <Link to="/about">About</Link>
       </Button>
     </main>
   );

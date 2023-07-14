@@ -3,6 +3,7 @@ import { useState } from "react";
 import FormProduct from "./FormProduct";
 import Button from "./Button";
 import productJSON from "../data/products.json";
+import { Link } from "react-router-dom";
 
 interface Product {
   id: number;
@@ -58,7 +59,7 @@ export default function Products() {
       />
       <Button onClick={addNewProduct}>Add New Product</Button>
       <Button>
-        <a href="/">Back To Home</a>
+        <Link to="/">Back To Home</Link>
       </Button>
 
       {dataProducts.map((product) => (
