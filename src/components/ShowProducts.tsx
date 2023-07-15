@@ -14,7 +14,7 @@ const ShowProducts: React.FC = () => {
   const [error, setError] = useState<Error | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [products, setProducts] = useState<Product[]>([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState<string>("");
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
@@ -31,6 +31,14 @@ const ShowProducts: React.FC = () => {
       );
   }, []);
 
+  function handleChangeSearch(value: string) {
+    setSearch(value);
+  }
+
+  function handleSubmitSearch() {
+    setProducts(products);
+  }
+
   if (error && products.length === 0) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -39,13 +47,14 @@ const ShowProducts: React.FC = () => {
     return (
       <div className="dark:text-black text-white">
         <input
-          onChange={() => {}}
+          value={search}
+          onChange={(e) => handleChangeSearch(e.target.value)}
           type="search"
           name="searchProduct"
           id="searchProduct"
           className="px-2 py-2 mx-2 my-2 rounded"
         />
-        <Button>Search</Button>
+        <Button onClick={handleSubmitSearch}>Search</Button>
         <div className="flex flex-row flex-wrap w-full gap-4 font-semibold ">
           {products.map((product) => (
             <div
