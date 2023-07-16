@@ -1,16 +1,7 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 import { Layout } from "../components";
-
-type Product = {
-  brand: string;
-  thumbnail: string;
-  title: string;
-  price: string;
-  id: number;
-  category: string;
-  description: string;
-};
+import { Product } from "../types";
 
 export async function loader() {
   const response = await fetch("https://dummyjson.com/products");
@@ -44,26 +35,29 @@ export default function ProductsRoute() {
             className="px-2 py-2 mx-2 my-2 rounded"
           />
         </form>
-        <div className="flex flex-row flex-wrap w-full gap-4 font-semibold ">
+
+        <ul className="flex flex-row flex-wrap w-full gap-4 font-semibold ">
           {products.map((product) => (
-            <div
-              key={product.id}
-              className="w-60 bg-slate-200 hover:bg-slate-300 rounded-md shadow mx-2 my-2 flex flex-col justify-between p-4"
-            >
-              <ul>
-                <img
-                  src={product.thumbnail}
-                  className="rounded-t-lg h-40 w-full object-cover"
-                ></img>
-                <li>Title: {product.title}</li>
-                <li>Brand: {product.brand}</li>
-                <li>Category: {product.category}</li>
-                <li>Description: {product.description}</li>
-                <li>Price: ${product.price}</li>
-              </ul>
-            </div>
+            <li key={product.id}>
+              <Link
+                to={`/products/${product.id}`}
+                className="w-60 bg-slate-200 hover:bg-slate-300 rounded-md shadow mx-2 my-2 flex flex-col justify-between p-4"
+              >
+                <ul>
+                  <img
+                    src={product.thumbnail}
+                    className="rounded-t-lg h-40 w-full object-cover"
+                  ></img>
+                  <li>Title: {product.title}</li>
+                  <li>Brand: {product.brand}</li>
+                  <li>Category: {product.category}</li>
+                  <li>Description: {product.description}</li>
+                  <li>Price: ${product.price}</li>
+                </ul>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </Layout>
   );

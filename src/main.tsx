@@ -7,6 +7,7 @@ import HomeRoute from "./routes/home";
 import AboutRoute from "./routes/about";
 import AddRoute from "./routes/add";
 import ProductsRoute, { loader as productsLoader } from "./routes/products";
+import ProductIdRoute, { loader as productIdLoader } from "./routes/productId";
 
 const router = createBrowserRouter([
   {
@@ -26,11 +27,11 @@ const router = createBrowserRouter([
     element: <ProductsRoute />,
     loader: productsLoader,
   },
-  // {
-  //   path: "/products/:productId",
-  //   element: <ProductIdRoute />,
-  //   loader: productIdLoader,
-  // },
+  {
+    path: "/products/:productId",
+    element: <ProductIdRoute />,
+    loader: productIdLoader,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
