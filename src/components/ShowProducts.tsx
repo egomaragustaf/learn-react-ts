@@ -10,7 +10,7 @@ type Product = {
   description: string;
 };
 
-const ShowProducts: React.FC = () => {
+export default function ShowProducts() {
   const [error, setError] = useState<Error | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [products, setProducts] = useState<Product[]>([]);
@@ -78,6 +78,4 @@ const ShowProducts: React.FC = () => {
       </div>
     );
   }
-};
-
-export default ShowProducts;
+}
