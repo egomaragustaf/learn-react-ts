@@ -3,28 +3,34 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 
-import App from "./App";
-import About from "./components/About";
-import Products from "./components/Products";
-import ShowProducts from "./components/ShowProducts";
+import HomeRoute from "./routes/home";
+import AboutRoute from "./routes/about";
+import AddRoute from "./routes/add";
+import ProductsRoute, { loader as productsLoader } from "./routes/products";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    element: <HomeRoute />,
   },
   {
     path: "/about",
-    element: <About />,
+    element: <AboutRoute />,
+  },
+  {
+    path: "/add",
+    element: <AddRoute />,
   },
   {
     path: "/products",
-    element: <Products />,
+    element: <ProductsRoute />,
+    loader: productsLoader,
   },
-  {
-    path: "/showproducts",
-    element: <ShowProducts />,
-  },
+  // {
+  //   path: "/products/:productId",
+  //   element: <ProductIdRoute />,
+  //   loader: productIdLoader,
+  // },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

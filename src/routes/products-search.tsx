@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { useEffect, useState } from "react";
 
 type Product = {
@@ -10,7 +12,7 @@ type Product = {
   description: string;
 };
 
-export default function ShowProducts() {
+export default function ProductsSearchRoute() {
   const [error, setError] = useState<Error | null>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [products, setProducts] = useState<Product[]>([]);
@@ -45,7 +47,8 @@ export default function ShowProducts() {
         <form id="searchForm">
           <label
             htmlFor="searchProduct"
-            className="dark:text-white text-black mx-2 my-2">
+            className="dark:text-white text-black mx-2 my-2"
+          >
             Search Product
           </label>
           <input
@@ -61,11 +64,13 @@ export default function ShowProducts() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="w-60 bg-slate-200 hover:bg-slate-300 rounded-md shadow mx-2 my-2 flex flex-col justify-between p-4">
+              className="w-60 bg-slate-200 hover:bg-slate-300 rounded-md shadow mx-2 my-2 flex flex-col justify-between p-4"
+            >
               <ul>
                 <img
                   src={product.thumbnail}
-                  className="rounded-t-lg h-40 w-full object-cover"></img>
+                  className="rounded-t-lg h-40 w-full object-cover"
+                ></img>
                 <li>Title: {product.title}</li>
                 <li>Brand: {product.brand}</li>
                 <li>Category: {product.category}</li>

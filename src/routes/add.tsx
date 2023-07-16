@@ -1,9 +1,9 @@
 import { useState } from "react";
-
-import FormProduct from "./FormProduct";
-import Button from "./Button";
-import productJSON from "../data/products.json";
 import { Link } from "react-router-dom";
+
+import { Layout, Button, FormProduct } from "../components";
+
+import productJSON from "../data/products.json";
 
 interface Product {
   id: number;
@@ -12,7 +12,7 @@ interface Product {
   price: number;
 }
 
-export default function Products() {
+export default function AddRoute() {
   const [dataProducts, setDataProducts] = useState<Product[]>(productJSON);
   const [formData, setFormData] = useState<Product>({
     id: 0,
@@ -51,7 +51,7 @@ export default function Products() {
   }
 
   return (
-    <div>
+    <Layout>
       <FormProduct
         formData={formData}
         onInputChange={handleInputChange}
@@ -69,6 +69,6 @@ export default function Products() {
           <li>{product.price}</li>
         </ul>
       ))}
-    </div>
+    </Layout>
   );
 }

@@ -9,7 +9,7 @@ interface FormProductProps {
   onSubmit: (event: React.FormEvent) => void;
 }
 
-export default function FormProduct({
+export function FormProduct({
   formData,
   onInputChange,
   onSubmit,
