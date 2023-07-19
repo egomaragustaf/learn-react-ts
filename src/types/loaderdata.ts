@@ -1,4 +1,4 @@
-import { Product } from ".";
+import { Product } from "./product";
 
 export type LoaderData = {
     query: string;
