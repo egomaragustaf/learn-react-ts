@@ -25,7 +25,7 @@ export function SearchFormProduct({
           placeholder={placeholder}
           autoComplete="off"
           defaultValue={query}
-          className="block max-w-2xl p-2 text-lg"
+          className="block text-black max-w-2xl p-2 text-lg"
         />
       </fieldset>
     </form>
