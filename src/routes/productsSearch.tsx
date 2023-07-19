@@ -1,4 +1,4 @@
-import { LoaderFunctionArgs } from "react-router-dom";
+import { LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 
 import { Product } from "../types";
 import { Layout } from "../components";
@@ -13,8 +13,15 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const products = result.products;
 
   console.log(products);
+  return { products };
 }
 
 export default function ProductsSearchRoute() {
-  return <Layout>Test</Layout>;
+  const { products } = useLoaderData() as Awaited<ReturnType<typeof loader>>;
+
+  return (
+    <Layout>
+      <pre>{JSON.stringify(products, null, 2)}</pre>
+    </Layout>
+  );
 }
