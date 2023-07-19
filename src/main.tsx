@@ -10,11 +10,13 @@ import ProductIdRoute, { loader as productIdLoader } from "./routes/productId";
 import ProductsSearchRoute, {
   loader as productsSearchLoader,
 } from "./routes/productsSearch";
+import ErrorPageRoute from "./routes/404";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeRoute />,
+    errorElement: <ErrorPageRoute />,
   },
   {
     path: "/about",
