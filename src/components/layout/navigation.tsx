@@ -9,9 +9,6 @@ export function Navigation() {
             <Link to="/">Home</Link>
           </li>
           <li className="hover:bg-slate-900 p-2">
-            <Link to="/add">Add</Link>
-          </li>
-          <li className="hover:bg-slate-900 p-2">
             <Link to="/about">About</Link>
           </li>
           <li className="hover:bg-slate-900 p-2">
