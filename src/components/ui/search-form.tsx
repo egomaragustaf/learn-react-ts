@@ -7,16 +7,16 @@ interface Props {
 
 export function SearchFormProduct({
   action = "/search",
-  placeholder = "Search",
+  placeholder = "Search products...",
 }: Props) {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q") || "";
 
   return (
-    <form action={action} className="w-full">
-      <fieldset className="relative flex items-center gap-4">
+    <form action={action} className="w-full flex justify-center items-center">
+      <fieldset className="relative flex justify-center items-center gap-4 w-full max-w-4xl ">
         <label htmlFor="productSearch" className="dark:text-white text-black">
-          Search
+          🔎
         </label>
         <input
           id="productSearch"
@@ -25,7 +25,7 @@ export function SearchFormProduct({
           placeholder={placeholder}
           autoComplete="off"
           defaultValue={query}
-          className="block text-black max-w-2xl p-2 text-lg"
+          className="block text-black w-full px-2 py-1 text-lg"
         />
       </fieldset>
     </form>
