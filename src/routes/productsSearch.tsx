@@ -30,17 +30,17 @@ export default function ProductsSearchRoute() {
 
   return (
     <Layout>
-      <div className="dark:text-black text-white">
+      <div className="dark:text-black text-white flex flex-col gap-8">
         <SearchFormProduct />
 
         {count <= 0 && query && (
-          <section className="dark:text-white text-black">
+          <section className="dark:text-white text-black flex flex-row flex-wrap w-full justify-center items-center">
             <p>No result found for keyword "{query}"</p>
           </section>
         )}
         {products.length > 0 && (
           <section>
-            <ul className="flex flex-row flex-wrap w-full gap-4 font-semibold ">
+            <ul className="flex flex-row flex-wrap w-full justify-center items-start gap-4 font-semibold">
               {products.map((product) => (
                 <li key={product.id}>
                   <Link
@@ -50,10 +50,14 @@ export default function ProductsSearchRoute() {
                       <img
                         src={product.thumbnail}
                         className="rounded-t-lg h-40 w-full object-cover"></img>
-                      <li>Title: {product.title}</li>
-                      <li>Brand: {product.brand}</li>
-                      <li>Category: {product.category}</li>
-                      <li>Description: {product.description}</li>
+                      <li className="line-clamp-1">Title: {product.title}</li>
+                      <li className="line-clamp-1">Brand: {product.brand}</li>
+                      <li className="line-clamp-1">
+                        Category: {product.category}
+                      </li>
+                      <li className="line-clamp-3">
+                        Description: {product.description}
+                      </li>
                       <li>Price: ${product.price}</li>
                     </ul>
                   </Link>
