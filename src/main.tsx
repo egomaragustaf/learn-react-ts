@@ -8,6 +8,9 @@ import AboutRoute from "./routes/about";
 import AddRoute from "./routes/add";
 import ProductsRoute, { loader as productsLoader } from "./routes/products";
 import ProductIdRoute, { loader as productIdLoader } from "./routes/productId";
+import ProductsSearchRoute, {
+  loader as productsSearchLoader,
+} from "./routes/productsSearch";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +34,11 @@ const router = createBrowserRouter([
     path: "/products/:productId",
     element: <ProductIdRoute />,
     loader: productIdLoader,
+  },
+  {
+    path: "/search",
+    element: <ProductsSearchRoute />,
+    loader: productsSearchLoader,
   },
 ]);
 
