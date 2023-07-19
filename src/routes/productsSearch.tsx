@@ -1,4 +1,5 @@
 import { LoaderFunctionArgs } from "react-router-dom";
+
 import { Product } from "../types";
 import { Layout } from "../components";
 
