@@ -5,7 +5,6 @@ import "./index.css";
 
 import HomeRoute from "./routes/home";
 import AboutRoute from "./routes/about";
-import AddRoute from "./routes/add";
 import ProductsRoute, { loader as productsLoader } from "./routes/products";
 import ProductIdRoute, { loader as productIdLoader } from "./routes/productId";
 import ProductsSearchRoute, {
@@ -20,10 +19,6 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <AboutRoute />,
-  },
-  {
-    path: "/add",
-    element: <AddRoute />,
   },
   {
     path: "/products",
