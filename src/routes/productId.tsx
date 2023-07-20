@@ -21,7 +21,28 @@ export default function ProductIdRoute() {
 
   return (
     <Layout>
-      <pre>{JSON.stringify(product, null, 2)}</pre>
+      <div className="w-full flex justify-center items-center">
+        <ul
+          key={product.id}
+          className="rounded-md shadow mx-2 my-2 flex p-4 gap-8 text-xl">
+          <li className="bg-slate-200 rounded-lg p-4">
+            <ul>
+              <img
+                src={product.thumbnail}
+                className="rounded-lg h-60 object-cover w-full"></img>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li className="text-indigo-500">{product.title}</li>
+              <li>Brand: {product.brand}</li>
+              <li>Category: {product.category}</li>
+              <li>Description: {product.description}</li>
+              <li>Price: ${product.price}</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </Layout>
   );
 }
