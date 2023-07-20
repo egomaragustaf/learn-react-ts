@@ -25,7 +25,7 @@ export default function ProductIdRoute() {
         <ul
           key={product.id}
           className="rounded-md shadow flex justify-center items-center max-w-6xl p-4 gap-8 text-xl">
-          <li className="bg-slate-200 rounded-lg p-4">
+          <li className="bg-slate-200 rounded-lg p-4 w-80">
             <ul>
               <img
                 src={product.thumbnail}
