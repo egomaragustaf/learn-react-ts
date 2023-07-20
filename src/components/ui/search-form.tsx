@@ -15,9 +15,7 @@ export function SearchFormProduct({
   return (
     <form action={action} className="w-full flex justify-center items-center">
       <fieldset className="relative flex justify-center items-center gap-4 w-full max-w-4xl ">
-        <label htmlFor="productSearch" className="dark:text-white text-black">
-          🔎
-        </label>
+        <label htmlFor="productSearch">🔎</label>
         <input
           id="productSearch"
           name="q"
@@ -25,7 +23,7 @@ export function SearchFormProduct({
           placeholder={placeholder}
           autoComplete="off"
           defaultValue={query}
-          className="block text-black w-full px-2 py-1 text-lg"
+          className="block text-black w-full px-2 py-1 text-lg border-slate-950 border-2"
         />
       </fieldset>
     </form>

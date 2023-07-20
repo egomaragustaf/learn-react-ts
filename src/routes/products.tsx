@@ -20,7 +20,7 @@ export default function ProductsRoute() {
 
   return (
     <Layout>
-      <div className="dark:text-black text-white flex flex-col gap-8">
+      <div className="text-black flex flex-col gap-8">
         <SearchFormProduct />
         <ul className="flex flex-row flex-wrap w-full justify-center items-start gap-4 font-semibold text-black">
           {products.map((product) => (

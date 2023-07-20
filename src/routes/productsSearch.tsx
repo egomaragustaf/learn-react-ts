@@ -30,11 +30,11 @@ export default function ProductsSearchRoute() {
 
   return (
     <Layout>
-      <div className="dark:text-black text-white flex flex-col gap-8">
+      <div className="text-black flex flex-col gap-8">
         <SearchFormProduct />
 
         {count <= 0 && query && (
-          <section className="dark:text-white text-black flex flex-row flex-wrap w-full justify-center items-center">
+          <section className="dark:text-white text-black text-4xl flex flex-row flex-wrap w-full justify-center items-center">
             <p>No result found for keyword "{query}"</p>
           </section>
         )}
