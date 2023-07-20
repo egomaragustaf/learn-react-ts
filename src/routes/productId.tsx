@@ -39,8 +39,8 @@ export default function ProductIdRoute() {
                 Price: ${product.price}
               </li>
               <div className="flex gap-4 mb-4 text-slate-400">
-                <li>Brand: {product.brand}</li>
-                <li>Category: {product.category}</li>
+                <li>Brand: {product.brand} |</li>
+                <li>Category: {product.category} |</li>
                 <li>Rating: {product.rating}</li>
               </div>
               <li className="mb-4">{product.description}</li>
