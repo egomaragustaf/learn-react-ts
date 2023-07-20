@@ -24,17 +24,17 @@ export default function ProductIdRoute() {
       <div className="w-full flex justify-center items-center">
         <ul
           key={product.id}
-          className="rounded-md shadow mx-2 my-2 flex p-4 gap-8 text-xl">
+          className="rounded-md shadow flex justify-center items-center max-w-6xl p-4 gap-8 text-xl">
           <li className="bg-slate-200 rounded-lg p-4">
             <ul>
               <img
                 src={product.thumbnail}
-                className="rounded-lg h-60 object-cover w-full"></img>
+                className="rounded-lg shadow-lg h-60 object-cover w-full"></img>
             </ul>
           </li>
           <li>
             <ul>
-              <li className="text-indigo-500">{product.title}</li>
+              <li className="text-indigo-500 text-4xl">{product.title}</li>
               <li>Brand: {product.brand}</li>
               <li>Category: {product.category}</li>
               <li>Description: {product.description}</li>
