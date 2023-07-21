@@ -24,7 +24,7 @@ export default function ProductIdRoute() {
       <div className="w-full flex justify-center items-center">
         <ul
           key={product.id}
-          className="rounded-md shadow flex justify-center items-start max-w-4xl p-4 gap-8 text-xl">
+          className="rounded-md shadow flex justify-center items-start max-w-5xl p-4 gap-8 text-xl">
           <li className="bg-slate-200 rounded-lg p-2 w-80">
             <ul>
               <img
@@ -38,11 +38,12 @@ export default function ProductIdRoute() {
               <li className="text-3xl font-bold mb-4">
                 Price: ${product.price}
               </li>
-              <div className="flex gap-4 mb-4 text-slate-400">
+              <ul className="flex gap-2 mb-4 text-slate-400">
                 <li>Brand: {product.brand} |</li>
                 <li>Category: {product.category} |</li>
-                <li>Rating: {product.rating}</li>
-              </div>
+                <li className="text-indigo-500">Rating: {product.rating} |</li>
+                <li>Stock: {product.stock}</li>
+              </ul>
               <li className="mb-4">{product.description}</li>
               <div className="flex gap-8">
                 <button
