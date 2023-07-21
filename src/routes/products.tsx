@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 import { Layout, SearchFormProduct } from "../components";
 import { Product } from "../types";
+import { ProductCategory } from "../components/ui/product-category";
 
 export async function loader() {
   const response = await fetch("https://dummyjson.com/products");
@@ -20,9 +21,10 @@ export default function ProductsRoute() {
 
   return (
     <Layout>
-      <div className="text-black flex flex-col gap-8 text-xs">
+      <div className="text-black flex w-full flex-col gap-8 text-xs justify-center items-center">
         <SearchFormProduct />
-        <ul className="flex flex-row flex-wrap w-full justify-center items-start gap-2 font-semibold text-black">
+        <ProductCategory />
+        <ul className="flex flex-row flex-wrap w-full justify-center items-start font-semibold text-black">
           {products.map((product) => (
             <li key={product.id}>
               <Link

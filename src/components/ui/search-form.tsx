@@ -23,7 +23,7 @@ export function SearchFormProduct({
           placeholder={placeholder}
           autoComplete="off"
           defaultValue={query}
-          className="block text-black w-full px-2 py-1 text-lg border-slate-950 border-2"
+          className="block text-black w-full rounded-md px-2 py-1 text-lg border-slate-950 border-2"
         />
       </fieldset>
     </form>
