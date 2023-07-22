@@ -35,7 +35,7 @@ export default function ProductsSearchRoute() {
 
         {count <= 0 && query && (
           <section className="dark:text-white text-black text-4xl flex flex-row flex-wrap w-full justify-center items-center">
-            <p>No result found for keyword "{query}"</p>
+            <p>No product found for keyword "{query}"</p>
           </section>
         )}
 
@@ -43,7 +43,7 @@ export default function ProductsSearchRoute() {
           <section className="text-black flex w-full flex-col gap-8 text-xs justify-center items-center">
             <div className="max-w-4xl w-full flex justify-start items-center dark:text-white text-black mb-4">
               <h1 className="text-xl">
-                Found {products.length} users with keyword "{query}"
+                Found {products.length} products with keyword "{query}"
               </h1>
             </div>
             <ul className="flex flex-row flex-wrap w-full justify-center items-start font-semibold text-black">
