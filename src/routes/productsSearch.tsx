@@ -38,27 +38,36 @@ export default function ProductsSearchRoute() {
             <p>No result found for keyword "{query}"</p>
           </section>
         )}
+
         {products.length > 0 && (
-          <section>
-            <ul className="flex flex-row flex-wrap w-full justify-center items-start gap-4 font-semibold">
+          <section className="text-black flex w-full flex-col gap-8 text-xs justify-center items-center">
+            <div className="max-w-4xl w-full flex justify-start items-center dark:text-white text-black mb-4">
+              <h1 className="text-xl">
+                Found {products.length} users with keyword "{query}"
+              </h1>
+            </div>
+            <ul className="flex flex-row flex-wrap w-full justify-center items-start font-semibold text-black">
               {products.map((product) => (
                 <li key={product.id}>
                   <Link
                     to={`/products/${product.id}`}
-                    className="w-60 bg-slate-200 hover:bg-slate-300 rounded-md shadow mx-2 my-2 flex flex-col justify-between p-4">
+                    className="w-52 bg-slate-50 hover:bg-slate-300 rounded-md shadow mx-2 my-2 flex flex-col justify-between p-2">
                     <ul>
                       <img
                         src={product.thumbnail}
-                        className="rounded-t-lg h-40 w-full object-cover"></img>
+                        className="rounded-t-lg h-60 w-full object-cover"></img>
                       <li className="line-clamp-1">Title: {product.title}</li>
-                      <li className="line-clamp-1">Brand: {product.brand}</li>
-                      <li className="line-clamp-1">
-                        Category: {product.category}
+                      <li className="line-clamp-1 mb-4">
+                        Brand: {product.brand}
                       </li>
-                      <li className="line-clamp-3">
-                        Description: {product.description}
+                      <li className="flex justify-between items-end">
+                        <span className="text-base text-indigo-900 font-bold">
+                          Price: ${product.price}
+                        </span>
+                        <span className="text-slate-500">
+                          Rating: {product.rating}/5
+                        </span>
                       </li>
-                      <li>Price: ${product.price}</li>
                     </ul>
                   </Link>
                 </li>

@@ -21,7 +21,7 @@ export default function ProductsRoute() {
 
   return (
     <Layout>
-      <div className="text-black flex w-full flex-col gap-8 text-xs justify-center items-center">
+      <section className="text-black flex w-full flex-col gap-8 text-xs justify-center items-center">
         <SearchFormProduct />
         <ProductCategory />
         <ul className="flex flex-row flex-wrap w-full justify-center items-start font-semibold text-black">
@@ -49,7 +49,7 @@ export default function ProductsRoute() {
             </li>
           ))}
         </ul>
-      </div>
+      </section>
     </Layout>
   );
 }
